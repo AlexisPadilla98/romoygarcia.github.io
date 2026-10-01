@@ -284,6 +284,54 @@ const SiteController = (function (model) {
     });
   }
 
+  function bindMobileNav() {
+    const toggleBtn = document.getElementById("navToggle");
+    const navMenu = document.getElementById("siteNav");
+    const overlay = document.getElementById("navOverlay");
+
+    if (!toggleBtn || !navMenu) return;
+
+    function openMenu() {
+      toggleBtn.classList.add("open");
+      navMenu.classList.add("active");
+      if (overlay) overlay.classList.add("active");
+      toggleBtn.setAttribute("aria-expanded", "true");
+      document.body.classList.add("nav-open");
+    }
+
+    function closeMenu() {
+      toggleBtn.classList.remove("open");
+      navMenu.classList.remove("active");
+      if (overlay) overlay.classList.remove("active");
+      toggleBtn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-open");
+    }
+
+    // Abrir/cerrar menú al tocar las rayitas
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = navMenu.classList.contains("active");
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    // Cerrar el menú al dar clic en cualquiera de las opciones
+    navMenu.addEventListener("click", (e) => {
+      if (e.target.classList.contains("nav-link")) closeMenu();
+    });
+
+    // Cerrar al tocar el fondo oscuro
+    if (overlay) overlay.addEventListener("click", closeMenu);
+
+    // Cerrar con la tecla Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    // Si la pantalla crece a tamaño de escritorio, asegurarse de cerrar el menú
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+  }
+
   function init() {
     renderIdentity();
     renderNav();
@@ -294,6 +342,7 @@ const SiteController = (function (model) {
     renderContact();
     bindContactForm();
     bindScrollHeader();
+    bindMobileNav();
   }
 
   return { init };
