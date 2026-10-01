@@ -1,150 +1,119 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Romo | García Abogados</title>
-<meta name="description" content="Romo | García Abogados — Litigio civil, mercantil y familiar. Donde la estrategia se convierte en resultado.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romo | García Abogados</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="#inicio" class="brand">
-      <img data-bind="logo" class="brand-mark" src="" alt="">
-    </a>
-
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="site-nav" data-bind="nav"></nav>
-  </div>
-</header>
-
-<main>
-
-  <!-- HERO -->
-  <section id="inicio" class="hero" data-bind="heroImage">
-    <div class="hero-content">
-      <img data-bind="logo" class="hero-logo" src="" alt="">
-      <p class="hero-tagline" data-bind="tagline"></p>
-      <div class="hero-actions" data-bind="callButtons"></div>
+  <!-- Encabezado / Navegación -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#inicio" class="brand">
+        <img data-bind="logo" src="" alt="" class="brand-logo">
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="site-nav" data-bind="nav"></nav>
     </div>
-    <div class="hero-scroll-cue" aria-hidden="true"></div>
-  </section>
+  </header>
 
-  <!-- NOSOTROS -->
-  <section id="nosotros" class="section section--cream">
-    <div class="section-inner">
-      <div class="section-heading">
-        <span class="section-kicker">Nosotros</span>
-        <h2>Estrategia, criterio y experiencia al servicio de cada caso</h2>
-        <p class="section-lede">
-          Romo | García es un despacho especializado en litigio civil, mercantil
-          y familiar, con particular experiencia en asuntos corporativos,
-          controversias bancarias y de seguros. Nuestra práctica se extiende
-          también al derecho constitucional y amparo, así como a asuntos
-          regulatorios en los sectores de salud y energía.
+  <main>
+    <!-- Hero / Inicio -->
+    <section id="inicio" class="hero" data-bind="heroImage">
+      <div class="hero-content">
+        <img data-bind="logo" src="" alt="" class="hero-logo">
+        <p class="tagline" data-bind="tagline"></p>
+        <div class="hero-buttons" data-bind="callButtons"></div>
+      </div>
+    </section>
+
+    <!-- Nosotros / Abogados -->
+    <section id="nosotros" class="section section-nosotros">
+      <div class="container">
+        <span class="section-subtitle">Nosotros</span>
+        <h2 class="section-title">Estrategia, criterio y experiencia al servicio de cada caso</h2>
+        <p class="section-intro">
+          Romo | García es un despacho especializado en litigio civil, mercantil y familiar, con particular experiencia en asuntos corporativos, controversias bancarias y de seguros. Nuestra práctica se extiende también al derecho constitucional y amparo, así como a asuntos regulatorios en los sectores de salud y energía.
         </p>
+        <div class="attorneys-grid" data-bind="attorneys"></div>
       </div>
+    </section>
 
-      <div class="attorneys" data-bind="attorneys"></div>
-    </div>
-  </section>
-
-  <!-- ÁREAS DE PRÁCTICA -->
-  <section id="areas" class="section section--navy">
-    <div class="section-inner">
-      <div class="section-heading section-heading--light">
-        <span class="section-kicker">Áreas de Práctica</span>
-        <h2>Un despacho, múltiples frentes de defensa</h2>
+    <!-- Áreas de Práctica -->
+    <section id="areas" class="section section-areas">
+      <div class="container">
+        <span class="section-subtitle">Áreas de Práctica</span>
+        <h2 class="section-title">Un despacho, múltiples frentes de defensa</h2>
+        <div class="practice-grid" data-bind="practiceAreas"></div>
       </div>
+    </section>
 
-      <div class="areas-grid" data-bind="practiceAreas"></div>
-    </div>
-  </section>
-
-  <!-- CÉDULAS -->
-  <section id="cedulas" class="section section--cream">
-    <div class="section-inner">
-      <div class="section-heading">
-        <span class="section-kicker">Cédulas Profesionales</span>
-        <h2>Respaldo y acreditación profesional</h2>
+    <!-- Cédulas Profesionales -->
+    <section id="cedulas" class="section section-cedulas">
+      <div class="container">
+        <span class="section-subtitle">Cédulas Profesionales</span>
+        <h2 class="section-title">Respaldo y acreditación profesional</h2>
+        <div class="credentials-grid" data-bind="credentials"></div>
       </div>
+    </section>
 
-      <div class="credentials" data-bind="credentials"></div>
-    </div>
-  </section>
+    <!-- Contacto -->
+    <section id="contacto" class="section section-contacto">
+      <div class="container">
+        <span class="section-subtitle">Contacto</span>
+        <h2 class="section-title">Agende una consulta</h2>
+        
+        <div class="contact-grid">
+          <div class="contact-col-left">
+            <address class="contact-address" data-bind="address"></address>
+            <div class="contact-phones" data-bind="contactPhones"></div>
+            <p class="contact-email"><a data-bind="email" href=""></a></p>
+            <p class="contact-hours" data-bind="officeHours"></p>
+            <div class="social-links" data-bind="social"></div>
+            
+            <div class="contact-map-placeholder">
+              <span>Mapa próximamente disponible</span>
+            </div>
+          </div>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="section section--leather">
-    <div class="section-inner contact-grid">
-
-      <div class="contact-info">
-        <span class="section-kicker section-kicker--light">Contacto</span>
-        <h2>Agende una consulta</h2>
-
-        <address data-bind="address"></address>
-
-        <ul class="contact-phones" data-bind="contactPhones"></ul>
-
-        <p class="contact-email">
-          <a data-bind="email" href="#"></a>
-        </p>
-
-        <p class="contact-hours" data-bind="officeHours"></p>
-
-        <div class="contact-social" data-bind="social"></div>
-      </div>
-
-      <div class="contact-map">
-        <div class="map-placeholder">
-          <span>Mapa próximamente disponible</span>
+          <form class="contact-form" data-bind="contactForm">
+            <h3>Envíenos un mensaje</h3>
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone">
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar mensaje</button>
+            <p class="form-status"></p>
+          </form>
         </div>
       </div>
+    </section>
+  </main>
 
-      <form class="contact-form" data-bind="contactForm">
-        <h3>Envíenos un mensaje</h3>
-        <label>
-          Nombre
-          <input type="text" name="nombre" required>
-        </label>
-        <label>
-          Correo electrónico
-          <input type="email" name="correo" required>
-        </label>
-        <label>
-          Teléfono
-          <input type="tel" name="telefono">
-        </label>
-        <label>
-          Mensaje
-          <textarea name="mensaje" rows="4" required></textarea>
-        </label>
-        <button type="submit" class="btn-submit">Enviar mensaje</button>
-        <p class="form-status" role="status"></p>
-      </form>
-
+  <!-- Pie de página -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="legal-notice" data-bind="legalNotice"></p>
+      <p class="copyright">&copy; <span data-bind="year"></span> <span data-bind="copyrightHolder"></span>. Todos los derechos reservados.</p>
     </div>
-  </section>
+  </footer>
 
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-legal" data-bind="legalNotice"></p>
-    <p class="footer-copy">&copy; <span data-bind="year"></span> <span data-bind="copyrightHolder"></span>. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-<script src="js/data.js"></script>
-<script src="js/controller.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
