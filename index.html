@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romo | García Abogados</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- Encabezado / Navegación -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#inicio" class="logo-link">
+        <img src="img/logo1.png" alt="Romo | García Abogados" data-bind="logo" class="brand-logo">
+      </a>
+
+      <!-- Botón de tres rayitas para móviles -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Enlaces del menú -->
+      <nav class="site-nav" id="siteNav" data-bind="nav">
+        <!-- Los enlaces se cargan desde JS -->
+      </nav>
+
+      <!-- Fondo oscuro detrás del menú móvil -->
+      <div class="nav-overlay" id="navOverlay"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Inicio -->
+    <section id="inicio" class="hero" data-bind="heroImage">
+      <div class="hero-content">
+        <img data-bind="logo" src="" alt="" class="hero-logo">
+        <p class="tagline" data-bind="tagline"></p>
+        <div class="hero-buttons" data-bind="callButtons"></div>
+      </div>
+    </section>
+
+    <!-- Nosotros / Abogados -->
+    <section id="nosotros" class="section section-nosotros">
+      <div class="container">
+        <span class="section-subtitle">Nosotros</span>
+        <h2 class="section-title">Estrategia, criterio y experiencia al servicio de cada caso</h2>
+        <p class="section-intro">
+          Romo | García es un despacho especializado en litigio civil, mercantil y familiar, con particular experiencia
+          en asuntos corporativos, controversias bancarias y de seguros. Nuestra práctica se extiende también al derecho
+          constitucional y amparo, así como a asuntos regulatorios en los sectores de salud y energía.
+        </p>
+        <div class="attorneys-grid" data-bind="attorneys"></div>
+      </div>
+    </section>
+
+    <!-- Áreas de Práctica -->
+    <section id="areas" class="section section-areas">
+      <div class="container">
+        <span class="section-subtitle">Áreas de Práctica</span>
+        <h2 class="section-title">Un despacho, múltiples frentes de defensa</h2>
+        <div class="practice-grid" data-bind="practiceAreas"></div>
+      </div>
+    </section>
+
+    <!-- Cédulas Profesionales -->
+    <section id="cedulas" class="section section-cedulas">
+      <div class="container">
+        <span class="section-subtitle">Cédulas Profesionales</span>
+        <h2 class="section-title">Respaldo y acreditación profesional</h2>
+        <div class="credentials-grid" data-bind="credentials"></div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section section-contacto">
+      <div class="container">
+        <span class="section-subtitle">Contacto</span>
+        <h2 class="section-title">Agende una consulta</h2>
+
+        <div class="contact-grid">
+          <div class="contact-col-left">
+            <address class="contact-address" data-bind="address"></address>
+            <div class="contact-phones" data-bind="contactPhones"></div>
+            <p class="contact-email"><a data-bind="email" href=""></a></p>
+            <p class="contact-hours" data-bind="officeHours"></p>
+            <div class="social-links" data-bind="social"></div>
+
+            <div class="contact-map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.327668584852!2d-103.38531122475225!3d20.67657968088469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae13bc94ea51%3A0xb3ca97a220bd62bd!2sAv%20Ignacio%20L%20Vallarta%201540-piso%2014%2C%20Ladr%C3%B3n%20de%20Guevara%2C%20Ladr%C3%B3n%20de%20Guevara%20Ote.%2C%2044600%20Guadalajara%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx"
+                width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+          <form class="contact-form" action="https://formspree.io/f/mjygvqnj" method="POST">
+            <h3>Envíenos un mensaje</h3>
+
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="name" placeholder="Nombre completo" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="phone" placeholder="Teléfono de contacto" required>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="message" placeholder="Describa brevemente su consulta" rows="4"
+                required></textarea>
+            </div>
+
+            <div id="form-status" style="margin-top: 15px; font-weight: 600;"></div>
+
+            <button type="submit" class="btn-submit">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="legal-notice" data-bind="legalNotice"></p>
+      <p class="copyright">&copy; <span data-bind="year"></span> <span data-bind="copyrightHolder"></span>. Todos los
+        derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
